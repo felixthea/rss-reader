@@ -1,0 +1,10 @@
+<h1>Feeds Index</h1>
+<% var feedId = feed.get('id'); %>
+
+<ul>
+  <% feedsCollection.each(function(feed){ %>
+    <li>
+      <a href="/feeds/<%= feedId %>" data-id="<%= feedId %>"><%= feed.get("title") %></a>
+    </li>
+  <% }); %>
+</ul>

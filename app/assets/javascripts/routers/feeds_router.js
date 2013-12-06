@@ -1,26 +1,33 @@
 NewReader.Routers.Feeds = Backbone.Router.extend({
-  initialize: function(){}, // may need to pass in collection
+  initialize: function($rootEl, feeds){
+    this.$rootEl = $rootEl;
+    this.feeds = feeds;
+  },
 
   routes: {
     "": "index",
-    "/feeds/:id": "show"
+    "/feeds/:feed_id/entries": "show"
   },
 
 
   index: function () {
     var feedsIndexView = new NewReader.Views.FeedsIndex({
-      collection: feedCollection
+      collection: this.feeds
     })
 
-    $rootEl.html(feedsIndexView.render().$el);
+    this.$rootEl.html(feedsIndexView.render().$el);
   },
 
-  show: function () {
+  show: function (feed_id) {
+    var feed = this.feeds.get(feed_id)
     var feedsShowView = new NewReader.Views.FeedsShow({
-      // model: gets feed model
+      model: feed
     })
 
     $rootEl.html(feedsShowView.render().$el);
-  }
+  },
+
+
+
 
 });

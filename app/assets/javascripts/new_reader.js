@@ -4,11 +4,21 @@ window.NewReader = {
   Views: {},
   Routers: {},
   initialize: function() {
+    var feedPOJOs = JSON.parse($("#bootstrapped-feeds").html())
+    var feeds = new NewReader.Collections.Feeds(feedPOJOs);
 
-    $rootEl = $('#content');
-    // feedsCollection
+    new NewReader.Routers.Feeds($('#content'), feeds)
 
-    alert('Hello from Backbone!');
+    Backbone.history.start();
+
+    // feeds.create($('#bootstrapped-feeds'))
+
+    // feeds.fetch({
+//       success: function() {
+//         Backbone.history.start();
+//         new NewReader.Routers.Feeds($('#content'));
+//       }
+//     });
   }
 };
 

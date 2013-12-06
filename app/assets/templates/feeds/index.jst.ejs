@@ -3,7 +3,7 @@
   <% collection.each(function(feed){ %>
     <% var feedId = feed.get('id'); %>
     <li>
-      <a href="/feeds/<%= feedId %>/entries" data-id="<%= feedId %>"><%= feed.get("title") %></a>
+      <a href="#/feeds/<%= feedId %>/entries" data-id="<%= feedId %>"><%= feed.get("title") %></a>
     </li>
   <% }); %>
 </ul>

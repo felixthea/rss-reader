@@ -4,4 +4,6 @@ NewReader.Collections.Feeds = Backbone.Collection.extend({
   url: "/feeds"// ,
 //   type: "get"
 
+
+  
 });

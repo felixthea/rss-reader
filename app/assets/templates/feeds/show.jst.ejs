@@ -1,8 +1,8 @@
-<h1>Feeds Show</h1>
+<h1>Feed Show</h1>
 
-<h2>Feed Title:<%= feed.get('title') %></h2>
-
-<p><%= feed.get('url') %></p>
-
+<h2>Feed Title:
+<% model.get('entries').each(function(entry) { %></h2>
+  <%= entry.get("title") %></p>
+<% }); %>
 <p><button id="refresh">Refresh</button></p>
 

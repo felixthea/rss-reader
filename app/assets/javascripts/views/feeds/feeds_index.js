@@ -12,4 +12,6 @@ NewReader.Views.FeedsIndex = Backbone.View.extend({
 
     return this;
   }
+
+
 });

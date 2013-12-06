@@ -9,7 +9,7 @@ NewReader.Views.FeedsShow = Backbone.View.extend({
   render: function() {
     var that = this;
     var renderedContent = this.template({
-      model: that.feed
+      model: that.model
     })
 
     this.$el.html(renderedContent);
